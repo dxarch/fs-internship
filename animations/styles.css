@@ -1,0 +1,55 @@
+.main {
+    max-width: 1232px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 50px;
+}
+
+.heading {
+    font-size: 50px;
+    margin-bottom: 50px;
+}
+
+.box {
+    display: flex;
+    align-items: center;
+    border-radius: 15px;
+    border: 3px solid #14264b;
+    padding: 20px 0;
+}
+
+.animation_box {
+    margin-bottom: 50px;
+}
+
+.shape {
+    width: 100px;
+    height: 100px;
+    background-color: #3f58a1;
+}
+
+.shape--keyframes {
+    animation: moveBox 3s infinite alternate ease-in-out;
+}
+
+@keyframes moveBox {
+    0% {
+        margin-left: 0;
+    }
+    100% {
+        margin-left: calc(100% - 100px);
+    }
+}
+
+.shape--transition {
+    transition: margin-left 3s ease-in-out;
+    margin-left: 0;
+}
+
+.box--transition:hover > .shape--transition {
+    margin-left: calc(100% - 100px);
+}
+
+.box--transition:not(:hover) > .shape--transition {
+    margin-left: 0;
+}
